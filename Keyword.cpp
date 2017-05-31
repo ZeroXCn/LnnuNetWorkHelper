@@ -1,0 +1,5 @@
+#include "Keyword.h"
+
+////////////////////////////////////////
+//全局变量
+QVariantMap Keyword::CONFIGMAP;

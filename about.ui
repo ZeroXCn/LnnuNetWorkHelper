@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AboutForm</class>
+ <widget class="QWidget" name="AboutForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>312</width>
+    <height>175</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="body_label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>10</y>
+     <width>311</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;%1&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;版本号:%2 &lt;br/&gt;初衷是用来方便同学们的日常上网,以及信息的查看&lt;br/&gt;只要输入正确的信息就可以用来登陆了 &lt;br/&gt;如果程序有BUG请及时反馈给我。 &lt;br/&gt;联系邮箱:&lt;a href=&quot;mailto:cnscj@qq.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;cnscj@qq.com&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;历史版本:&lt;a href=&quot;http://pan.baidu.com/s/1i4PjOPZ&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://pan.baidu.com/s/1i4PjOPZ&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;GitHub开源:&lt;a href=&quot;https://github.com/ZeroXCn/LnnuNetWorkHelper&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://dwz.cn/5Y53kT&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;by ZeroX &lt;br/&gt;%3 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

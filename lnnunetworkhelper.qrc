@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="LnnuNetworkHelper">
+    <file>logo.png</file>
+    <file>Network.ico</file>
+  </qresource>
+</RCC>
