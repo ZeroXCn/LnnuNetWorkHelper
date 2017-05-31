@@ -1,25 +1,29 @@
-# LnnuNetWorkHelper
-To help students in liao campus network
-
-编译环境Win7 + VS2013
-用的QT版本为5.6.1
-
-libeay32.dll和ssleay32.dll这两个文件是openSSl里的,因为懒得编译,直接从网上download了
-编译出exe后把这两个文件放到同级exe文件即可
-另外附上dll依赖表
-imageformats
-  -qgif.dll
-  -qjpeg.dll
-platforms
-  -qwindows.dll
-sqldrivers
-  -qsqlite.dll
-libeay32.dll
-ssleay32.dll
-msvcp120.dll
-msvcr120.dll
-Qt5Core.dll
-Qt5Gui.dll
-Qt5Network.dll
-Qt5Sql.dll
-Qt5Widgets.dll
+<span># LnnuNetWorkHelper  
+</p>
+<br>
+To help students in liao campus network</p>
+<br>编译环境Win7 + VS2013
+<br>用的QT版本为5.6.1
+  
+<br>libeay32.dll和ssleay32.dll这两个文件是openSSl里的,因为懒得编译,直接从网上download了
+<br>编译出exe后把这两个文件放到同级exe文件即可
+<br>另外附上dll依赖表
+<br>imageformats
+<br> &nbsp;-qgif.dll
+<br>&nbsp;-qjpeg.dll
+<br>platforms
+<br>&nbsp;-qwindows.dll
+<br>sqldrivers
+<br>&nbsp;-qsqlite.dll
+<br>libeay32.dll
+<br>ssleay32.dll
+<br>msvcp120.dll
+<br>msvcr120.dll
+<br>Qt5Core.dll
+<br>Qt5Gui.dll
+<br>Qt5Network.dll
+<br>Qt5Sql.dll
+<br>Qt5Widgets.dll
+  
+<br>2017年6月 </p>
+</span>
