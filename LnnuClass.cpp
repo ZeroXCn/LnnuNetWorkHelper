@@ -79,6 +79,7 @@ int LnnuClass::currentClass()
 {
 	//初始化 
 	setLabelTextAndTip(ui.lnnu_state_label, "");
+	ui.lnnu_code_le->setEnabled(false);
 
 	//获取验证码
 	//BUG:不能用TRUE判断,窗体初始化默认全为FALSE

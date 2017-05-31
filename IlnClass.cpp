@@ -74,6 +74,9 @@ int IlnClass::currentClass()
 {
 	//初始化
 	ui.iln_login_pushbutton->setEnabled(false);
+	ui.iln_smspas_le->setText("");
+	ui.iln_smspas_le->setEnabled(false);
+	ui.iln_login_pushbutton->setEnabled(false);
 	setLabelTextAndTip(ui.iln_state_label, "");
 	//获取Cookie
 	
@@ -246,11 +249,6 @@ void IlnClass::rechargeCardSlot()
 	form.getPageCookie();
 
 	form.exec();
-}
-
-void IlnClass::updataInfoSlot()
-{
-
 }
 
 void IlnClass::replyCookieSlot(QNetworkReply *reply)

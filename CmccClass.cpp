@@ -66,6 +66,8 @@ int CmccClass::currentClass()
 
 	setLabelTextAndTip(ui.cmcc_state_la, QStringLiteral("正在加载信息,请稍等.."));
 	ui.cmcc_login_pb->setEnabled(false);
+	ui.cmcc_vcodepic_la->clear();
+	ui.cmcc_vcode_le->setText("");
 
 	if (ui.cmcc_info_frame->isVisible() == false)
 		initPageInfo();
@@ -221,7 +223,7 @@ void CmccClass::replyLoginSlot(QNetworkReply *reply)
 			->ssl(QSsl::TlsV1SslV3)
 			->data(data)
 			->mode(HttpOp::POST)->send();
-		qDebug() << data;
+	
 	}
 	else if (nCount == 2)
 	{
@@ -230,7 +232,7 @@ void CmccClass::replyLoginSlot(QNetworkReply *reply)
 
 			QString msg = "";
 			int success = content.indexOf("loginrr.jpg");
-			qDebug() << content.mid(6000, 20000);
+
 			if (success != -1)
 			{
 				//获取登录成功信息
@@ -286,6 +288,7 @@ void CmccClass::replyLoginSlot(QNetworkReply *reply)
 		ui.cmcc_login_pb->setEnabled(true);
 
 	}
+	reply->deleteLater();
 }
 
 void CmccClass::replyLogoutSlot(QNetworkReply *reply)
@@ -295,6 +298,7 @@ void CmccClass::replyLogoutSlot(QNetworkReply *reply)
 	{
 		QString msg = NetWorkHelper::SubString(content, "alert(\"", "\");").value(0, "");
 		if (msg.indexOf(QStringLiteral("下线成功")) != -1){
+			currentClass();
 			setLabelTextAndTip(ui.cmcc_state_la, QStringLiteral("注销成功!"));
 			ui.cmcc_login_frame->setVisible(true);
 			ui.cmcc_info_frame->setVisible(false);
