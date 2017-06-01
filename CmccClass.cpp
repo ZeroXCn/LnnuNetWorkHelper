@@ -296,6 +296,7 @@ void CmccClass::replyLogoutSlot(QNetworkReply *reply)
 		QString msg = NetWorkHelper::SubString(content, "alert(\"", "\");").value(0, "");
 		if (msg.indexOf(QStringLiteral("下线成功")) != -1){
 			currentClass();
+			setLogined(false);
 			setLabelTextAndTip(ui.cmcc_state_la, QStringLiteral("注销成功!"));
 			ui.cmcc_login_frame->setVisible(true);
 			ui.cmcc_info_frame->setVisible(false);

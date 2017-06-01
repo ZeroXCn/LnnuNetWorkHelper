@@ -80,6 +80,7 @@ int LnnuClass::currentClass()
 {
 	//初始化 
 	setLabelTextAndTip(ui.lnnu_state_label, "");
+	ui.lnnu_code_pic->clear();
 	ui.lnnu_code_le->setEnabled(false);
 	ui.lnnu_login_pushbutton->setEnabled(false);
 
@@ -362,6 +363,7 @@ void LnnuClass::replyLoginSlot(QNetworkReply *reply)
 		QString pageContent = reply->readAll();
 		if (pageContent.isEmpty()){
 			setLabelTextAndTip(ui.lnnu_state_label,QStringLiteral("网络异常!"));
+			reply->deleteLater();
 			return;//错误
 		}
 		//取得页面反馈结果

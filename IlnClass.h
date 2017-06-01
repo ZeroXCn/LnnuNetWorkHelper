@@ -66,7 +66,6 @@ private slots:
 	void serviceSlot();
 	void rechargeCardSlot();
 
-	void updataInfoSlot();
 };
 
 	

@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_IlnClass_t {
     QByteArrayData data[22];
-    char stringdata0[293];
+    char stringdata0[290];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,10 +47,10 @@ QT_MOC_LITERAL(14, 174, 18), // "sendDisConnectInfo"
 QT_MOC_LITERAL(15, 193, 11), // "sendSmsInfo"
 QT_MOC_LITERAL(16, 205, 19), // "comboBoxChangedSlot"
 QT_MOC_LITERAL(17, 225, 5), // "index"
-QT_MOC_LITERAL(18, 231, 17), // "delUserButtonSlot"
-QT_MOC_LITERAL(19, 249, 11), // "serviceSlot"
-QT_MOC_LITERAL(20, 261, 16), // "rechargeCardSlot"
-QT_MOC_LITERAL(21, 278, 14) // "updataInfoSlot"
+QT_MOC_LITERAL(18, 231, 11), // "pawEditSlot"
+QT_MOC_LITERAL(19, 243, 17), // "delUserButtonSlot"
+QT_MOC_LITERAL(20, 261, 11), // "serviceSlot"
+QT_MOC_LITERAL(21, 273, 16) // "rechargeCardSlot"
 
     },
     "IlnClass\0replyCookieSlot\0\0QNetworkReply*\0"
@@ -59,8 +59,8 @@ QT_MOC_LITERAL(21, 278, 14) // "updataInfoSlot"
     "text\0sendLoginInfo\0sendLogOutInfo\0"
     "sendConnectInfo\0sendDisConnectInfo\0"
     "sendSmsInfo\0comboBoxChangedSlot\0index\0"
-    "delUserButtonSlot\0serviceSlot\0"
-    "rechargeCardSlot\0updataInfoSlot"
+    "pawEditSlot\0delUserButtonSlot\0serviceSlot\0"
+    "rechargeCardSlot"
 };
 #undef QT_MOC_LITERAL
 
@@ -90,10 +90,10 @@ static const uint qt_meta_data_IlnClass[] = {
       14,    0,  115,    2, 0x0a /* Public */,
       15,    0,  116,    2, 0x0a /* Public */,
       16,    1,  117,    2, 0x08 /* Private */,
-      18,    0,  120,    2, 0x08 /* Private */,
-      19,    0,  121,    2, 0x08 /* Private */,
-      20,    0,  122,    2, 0x08 /* Private */,
-      21,    0,  123,    2, 0x08 /* Private */,
+      18,    1,  120,    2, 0x08 /* Private */,
+      19,    0,  123,    2, 0x08 /* Private */,
+      20,    0,  124,    2, 0x08 /* Private */,
+      21,    0,  125,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
@@ -108,7 +108,7 @@ static const uint qt_meta_data_IlnClass[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,   17,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -134,10 +134,10 @@ void IlnClass::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 9: _t->sendDisConnectInfo(); break;
         case 10: _t->sendSmsInfo(); break;
         case 11: _t->comboBoxChangedSlot((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 12: _t->delUserButtonSlot(); break;
-        case 13: _t->serviceSlot(); break;
-        case 14: _t->rechargeCardSlot(); break;
-        case 15: _t->updataInfoSlot(); break;
+        case 12: _t->pawEditSlot((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 13: _t->delUserButtonSlot(); break;
+        case 14: _t->serviceSlot(); break;
+        case 15: _t->rechargeCardSlot(); break;
         default: ;
         }
     }
