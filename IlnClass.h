@@ -59,6 +59,8 @@ private:
 	void alterUser();
 private slots:
 	void comboBoxChangedSlot(int index);
+	void pawEditSlot(const QString &);
+
 	void delUserButtonSlot();
 
 	void serviceSlot();
@@ -141,6 +143,8 @@ private slots:
 private slots:
 	void usercomboBoxChangedSlot(int index);
 	void cardcomboBoxChangedSlot(int index);
+
+
 
 	void changeVcodeSlot();
 

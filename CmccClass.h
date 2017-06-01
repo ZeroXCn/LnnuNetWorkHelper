@@ -40,7 +40,7 @@ private slots:
 	void replyVcodeSlot(QNetworkReply *reply);
 private slots :
 	void comboboxChangedSlot(int index);
-
+	void pawEditSlot(const QString &);
 private slots:
 	void deleteUserSlot();
 	void loginSlot();

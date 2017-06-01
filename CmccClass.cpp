@@ -39,6 +39,7 @@ CmccClass::CmccClass(QWidget *parent):
 
 
 	connect(ui.cmcc_username_cb, SIGNAL(activated(int)), this, SLOT(comboboxChangedSlot(int)));
+	connect(ui.cmcc_password_le, SIGNAL(textEdited(const QString &)), this, SLOT(pawEditSlot(const QString &)));
 
 	//设置控件位置
 	ui.cmcc_info_frame->setGeometry(ui.cmcc_login_frame->geometry());
@@ -166,13 +167,9 @@ void CmccClass::replyPageInfoSlot(QNetworkReply *reply)
 		}
 		else
 			setLabelTextAndTip(ui.cmcc_state_la, QStringLiteral("信息获取失败,请重新切换选项卡!"));
-				
-		
-
 	}
 	else
 		setLabelTextAndTip(ui.cmcc_state_la, QStringLiteral("网络异常!"));
-
 
 	reply->deleteLater();
 }
@@ -313,6 +310,11 @@ void CmccClass::comboboxChangedSlot(int index)
 	comboxChangedIndex(ui.cmcc_username_cb, ui.cmcc_password_le, index);
 	ui.cmcc_remember_cb->setChecked(!ui.cmcc_password_le->text().isEmpty());
 
+}
+
+void CmccClass::pawEditSlot(const QString &text)
+{
+	passwordTextEdit(ui.cmcc_remember_cb, text);
 }
 
 

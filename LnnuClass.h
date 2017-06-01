@@ -48,6 +48,8 @@ private:
 	void alterUser();
 private slots:
 	void LnnuComboBoxChangedSlot(int index);
+	void pawEditSlot(const QString &);
+
 	void DelUserButtonSlot();
 public:
 	void init();
@@ -72,6 +74,7 @@ public:
 
 private slots:
 	void postPayActionSlot();
+
 };
 
 #endif

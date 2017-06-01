@@ -39,6 +39,7 @@ void IlnClass::init()
 
 
 	connect(ui.iln_user_comboBox, SIGNAL(activated(int)), this, SLOT(comboBoxChangedSlot(int)));
+	connect(ui.iln_pass_le, SIGNAL(textEdited(const QString &)), this, SLOT(pawEditSlot(const QString &)));
 
 	//加载数据
 	SQLiteDB userdb(Keyword::DATABASE_PATH);
@@ -132,6 +133,9 @@ void IlnClass::sendLoginInfo()
 		//->cookie()
 		->data(postdata)
 		->mode(HttpOp::POST)->send();
+
+	ui.iln_login_pushbutton->setEnabled(false);
+	setLabelTextAndTip(ui.iln_state_label, QStringLiteral("正在登陆,请稍等.."));
 }
 
 void IlnClass::sendLogOutInfo()
@@ -316,8 +320,11 @@ void IlnClass::replyLoginSlot(QNetworkReply *reply)
 		}
 		else{
 			setLabelTextAndTip(ui.iln_state_label, QStringLiteral("登陆信息获取失败,请重新切换选项卡!"));
+			reply->deleteLater();
+			return;
 		}
 	}
+	ui.iln_login_pushbutton->setEnabled(true);
 	reply->deleteLater();
 }
 
@@ -491,6 +498,11 @@ void IlnClass::comboBoxChangedSlot(int index)
 	if (user->mPassword.isEmpty())
 		ui.iln_keepinmine_checkBox->setChecked(false);
 	else ui.iln_keepinmine_checkBox->setChecked(true);
+}
+
+void IlnClass::pawEditSlot(const QString &text)
+{
+	passwordTextEdit(ui.iln_keepinmine_checkBox, text);
 }
 
 void IlnClass::delUserButtonSlot()
@@ -851,6 +863,7 @@ void IlnServiceClass::replyLoginSlot(QNetworkReply *reply)
 			NetClass::setLabelTextAndTip(ui.iln_service_state_la, InfoMap.value("errDesc", QStringLiteral("未知异常")).toString());
 		}
 	}
+	reply->deleteLater();
 	
 }
 void IlnServiceClass::changeVcodeSlot()

@@ -62,6 +62,12 @@ void NetClass::comboxChangedIndex(QComboBox *combo, QLineEdit *linedit, int inde
 
 }
 
+void NetClass::passwordTextEdit(QCheckBox *checkbox, const QString &text)
+{
+	if (text.isEmpty())
+		checkbox->setChecked(false);
+}
+
 QString NetClass::randomNumber(int bit)
 {
 	QString result = "";

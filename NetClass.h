@@ -11,6 +11,7 @@
 
 #include <QComboBox>
 #include <QLineEdit>
+#include <QCheckBox>
 #ifndef NETCLASS_H
 #define NETCLASS_H
 
@@ -51,6 +52,7 @@ public:
 protected:
 
 	void comboxChangedIndex(QComboBox *combo, QLineEdit *linedit,int index);
+	void passwordTextEdit(QCheckBox *checkbox,const QString &);
 
 	QAbstractListModel *loadUserData(QString type);
 	QVariantMap readUserData(int index);

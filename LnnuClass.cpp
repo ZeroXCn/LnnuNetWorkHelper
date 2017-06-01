@@ -60,6 +60,7 @@ void LnnuClass::init()
 	connect(ui.lnnu_user_delete_pushButton, SIGNAL(clicked()), this, SLOT(DelUserButtonSlot()));
 
 	connect(ui.lnnu_user_comboBox, SIGNAL(activated(int)), this, SLOT(LnnuComboBoxChangedSlot(int)));
+	connect(ui.lnnu_pass_le, SIGNAL(textEdited(const QString &)), this, SLOT(pawEditSlot(const QString &)));
 
 	//加载数据
 	ui.lnnu_user_comboBox->setModel(loadUserData("lnnu"));
@@ -80,6 +81,7 @@ int LnnuClass::currentClass()
 	//初始化 
 	setLabelTextAndTip(ui.lnnu_state_label, "");
 	ui.lnnu_code_le->setEnabled(false);
+	ui.lnnu_login_pushbutton->setEnabled(false);
 
 	//获取验证码
 	//BUG:不能用TRUE判断,窗体初始化默认全为FALSE
@@ -312,8 +314,12 @@ void LnnuClass::replyVCodeSlot(QNetworkReply *reply)
 {
 	int nCount = m_pVCodeHp->getUrlCount();
 	QVariant replycode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-	if (replycode == 0){
-		setLabelTextAndTip(ui.lnnu_state_label,QStringLiteral("网络异常!"));
+	if (replycode != 200 ){
+		if (replycode  == 0)
+			setLabelTextAndTip(ui.lnnu_state_label, QStringLiteral("网络异常!"));
+		else
+			setLabelTextAndTip(ui.lnnu_state_label, QStringLiteral("信息获取失败,请重新切换选项卡."));
+		reply->deleteLater();
 		return;
 	}
 
@@ -342,6 +348,8 @@ void LnnuClass::replyVCodeSlot(QNetworkReply *reply)
 		QString checkcode = NetWorkHelper::SubString(pageContent, "checkcode=\"", "\";").value(0, "");
 
 		(*m_loginKeyMap)["checkcode"] = checkcode;
+
+		ui.lnnu_login_pushbutton->setEnabled(true);
 		
 	}
 	reply->deleteLater();
@@ -462,6 +470,11 @@ void LnnuClass::LnnuComboBoxChangedSlot(int index)
 
 	ui.lnnu_keepinmine_checkBox->setChecked(!ui.lnnu_pass_le->text().isEmpty());
 
+}
+
+void LnnuClass::pawEditSlot(const QString &text)
+{
+	passwordTextEdit(ui.lnnu_keepinmine_checkBox, text);
 }
 
 void LnnuClass::DelUserButtonSlot()
