@@ -109,6 +109,7 @@ void LnnuClass::sendLoginInfo()
 		->cookie()
 		->data(postdata)
 		->mode(HttpOp::POST)->send();
+
 }
 
 
@@ -367,8 +368,8 @@ void LnnuClass::replyLoginSlot(QNetworkReply *reply)
 			return;//错误
 		}
 		//取得页面反馈结果
-		QStringList keyContent = NetWorkHelper::SubString(pageContent, QRegExp("<div id=\"fielderror2\"(.*)>"), QRegExp("</div>"));
-		if (keyContent.isEmpty()) //表示成功
+		QStringList keyContent = NetWorkHelper::SubString(pageContent, "<div id=\"fielderror2\" style=\"display: none;\">", "</div>");
+		if (keyContent.isEmpty()) //列表为空表示成功
 		{
 			//保存密码-如果没勾选,则只保存帐号
 			alterUser();

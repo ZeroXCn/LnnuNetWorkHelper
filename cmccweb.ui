@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>CmccForm</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="lnnunetworkhelper.qrc">
+    <normaloff>:/LnnuNetworkHelper/Network.ico</normaloff>:/LnnuNetworkHelper/Network.ico</iconset>
   </property>
   <widget class="QFrame" name="cmcc_info_frame">
    <property name="geometry">
@@ -244,6 +248,8 @@
   <tabstop>cmcc_sms_pb</tabstop>
   <tabstop>cmcc_changevcode_pb</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="lnnunetworkhelper.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -62,6 +62,9 @@ public:
         if (CmccForm->objectName().isEmpty())
             CmccForm->setObjectName(QStringLiteral("CmccForm"));
         CmccForm->resize(330, 172);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/LnnuNetworkHelper/Network.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        CmccForm->setWindowIcon(icon);
         cmcc_info_frame = new QFrame(CmccForm);
         cmcc_info_frame->setObjectName(QStringLiteral("cmcc_info_frame"));
         cmcc_info_frame->setGeometry(QRect(10, 260, 311, 171));
@@ -204,7 +207,7 @@ public:
 
     void retranslateUi(QWidget *CmccForm)
     {
-        CmccForm->setWindowTitle(QApplication::translate("CmccForm", "Form", 0));
+        CmccForm->setWindowTitle(QApplication::translate("CmccForm", "CmccForm", 0));
         cmcc_logout_pb->setText(QApplication::translate("CmccForm", "\347\231\273\345\207\272", 0));
         label->setText(QApplication::translate("CmccForm", "\345\270\220\345\217\267:", 0));
         cmcc_username_lb->setText(QString());

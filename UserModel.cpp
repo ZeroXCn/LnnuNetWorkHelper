@@ -69,13 +69,16 @@ UserModel::User *UserModel::getData(QString id, QString type)
 
 int UserModel::index(QString id, QString type)
 {
-	int index = 0;
-	;
-	for (QVector<User *>::iterator it = mUserList.begin(); it != mUserList.end(); it++,index++)
-	if ((*it)->mUsername == id && (*it)->mType == type) break;
-
-	if (mUserList.size() <= 0)return -1;
-	else return index;
+	int num = 0;
+	for (QVector<User *>::iterator it = mUserList.begin(); it != mUserList.end(); it++ )
+	{
+		if ((*it)->mUsername == id && (*it)->mType == type) {
+			return num;
+		}
+		num++;
+	}
+	
+	return -1;
 }
 
 void UserModel::clear()
